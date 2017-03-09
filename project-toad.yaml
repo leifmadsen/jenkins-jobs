@@ -2,21 +2,6 @@
     name: TOAD deployments
 
     jobs:
-        - 'oooq-{release}-image-downloader':
-            release: mitaka
-            partner: master
-        - 'oooq-{release}-image-downloader':
-            release: newton
-            partner: master
-        - 'oooq-{release}-image-downloader':
-            release: master
-            partner: master
-        - 'oooq-{release}-deploy-{partner}':
-            release: liberty
-            partner: toad
-        - 'oooq-{release}-deploy-{partner}':
-            release: mitaka
-            partner: toad
         - 'oooq-{release}-deploy-{partner}':
             release: newton
             partner: toad
@@ -28,32 +13,8 @@
             partner: toad
         - 'oooq-validate-{partner}':
             partner: toad
-        - 'test-browbeat':
-            partner: toad
-        - 'oooq-{release}-{distro}-osp_deploy-{partner}':
-            distro: osp8
-            release: liberty
-            partner: toad
-        - 'oooq-{release}-{distro}-osp_deploy-{partner}':
-            distro: osp10
+        - 'oooq-{release}-deploy-baremetal-{hwenv}':
             release: newton
-            partner: toad
-        - 'oooq-{release}-{distro}-build-{partner}':
-            release: liberty
-            partner: toad
-            distro: osp8
-        - 'oooq-{release}-{distro}-build-{partner}':
-            release: newton
-            partner: toad
-            distro: osp10
-        - 'oooq-{release}-{distro}-osp_deploy-baremetal-{partner}-{hwenv}':
-            release: newton
-            distro: osp10
-            partner: toad
-            hwenv: toad
-        - 'oooq-{release}-deploy-baremetal-{partner}-{hwenv}':
-            release: newton
-            partner: toad
             hwenv: toad
         - 'oooq-{release}-deploy-baremetal-{partner}-{hwenv}':
             release: ocata
