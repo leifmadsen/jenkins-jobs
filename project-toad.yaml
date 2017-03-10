@@ -16,7 +16,9 @@
         - 'oooq-{release}-deploy-baremetal-{hwenv}':
             release: newton
             hwenv: toad
-        - 'oooq-{release}-deploy-baremetal-{partner}-{hwenv}':
+        - 'oooq-{release}-deploy-baremetal-{hwenv}':
             release: ocata
-            partner: toad
+            hwenv: toad
+        - 'oooq-{release}-deploy-baremetal-{hwenv}':
+            release: master
             hwenv: toad
