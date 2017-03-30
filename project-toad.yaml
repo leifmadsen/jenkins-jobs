@@ -16,6 +16,9 @@
         - 'oooq-{release}-deploy-baremetal-{hwenv}':
             release: newton
             hwenv: toad
+        - 'oooq-{release}-upgrade-next-baremetal-{hwenv}':
+            release: newton
+            hwenv: toad
         - 'oooq-{release}-deploy-baremetal-{hwenv}':
             release: ocata
             hwenv: toad
