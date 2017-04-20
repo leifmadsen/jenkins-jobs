@@ -29,7 +29,7 @@
           --bootstrap \
           --teardown all \
           --tags all \
-          --skip-tags overcloud-validate,teardown-provision \
+          --skip-tags {skip_tags} \
           --requirements {requirements} \
           --requirements requirements.txt \
           --requirements quickstart-extras-requirements.txt \

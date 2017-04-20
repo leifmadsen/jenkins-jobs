@@ -16,6 +16,7 @@
           config: "./config/general_config/minimal.yml"
           release: "{release}"
           playbook: "quickstart-extras.yml"
+          skip_tags: "overcloud-validate,teardown-provision"
           extras: ""
       - collect-ara-results
       - collect-logs
@@ -52,6 +53,7 @@
           config: "${{WORKSPACE}}/config/deploy/contrail.yml"
           release: "{release}"
           playbook: "quickstart-extras.yml"
+          skip_tags: "overcloud-validate,teardown-provision,overcloud-deploy"
           extras: "-e @${{WORKSPACE}}/config/deploy/rdo_{release}_current_passed_ci.yml"
       - collect-ara-results
       - collect-logs
@@ -137,6 +139,7 @@
           config: "./config/general_config/minimal.yml"
           release: "{release}"
           playbook: "baremetal-full-deploy.yml"
+          skip_tags: "overcloud-validate,teardown-provision"
           extras: "--config ${{WORKSPACE}}/toad_envs/{hwenv}/deploy_config.yml --extra-vars @${{WORKSPACE}}/toad_envs/{hwenv}/env_settings.yml"
       - collect-ara-results
       - collect-logs
@@ -173,6 +176,7 @@
           config: "./config/general_config/minimal.yml"
           release: "{release}"
           playbook: "upgrade-baremetal.yml"
+          skip_tags: "overcloud-validate,teardown-provision"
           extras: "--config ${{WORKSPACE}}/toad_envs/{hwenv}/deploy_config.yml \
                    --extra-vars @${{WORKSPACE}}/toad_envs/{hwenv}/env_settings.yml \
                    --extra-vars upgrade_delorean_hash=current-passed-ci \
