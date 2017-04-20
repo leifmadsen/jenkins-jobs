@@ -35,7 +35,7 @@
           publish_target: 'oooq_{release}_deploy_{partner}_logs/${{BUILD_ID}}'
 
 - job-template:
-    name: 'oooq-{release}-current-passed-ci-deploy-{partner}'
+    name: 'oooq-{release}-current-passed-ci-contrail-deploy-{partner}'
     node: '{partner}'
 
     scm:
@@ -49,7 +49,7 @@
       - oooq-deploy:
           working-dir: "/home/stack/quickstart"
           requirements: "${{WORKSPACE}}/config/requirements/toad-requirements.txt"
-          config: "./config/general_config/minimal.yml"
+          config: "${{WORKSPACE}}/config/deploy/contrail.yml"
           release: "{release}"
           playbook: "quickstart-extras.yml"
           extras: "-e @${{WORKSPACE}}/config/deploy/rdo_{release}_current_passed_ci.yml"
