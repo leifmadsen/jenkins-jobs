@@ -5,6 +5,9 @@
         - 'oooq-{release}-deploy-{partner}':
             release: newton
             partner: toad
+        - 'oooq-{release}-current-passed-ci-deploy-{partner}':
+            release: newton
+            partner: toad
         - 'oooq-{release}-deploy-{partner}':
             release: ocata
             partner: toad
