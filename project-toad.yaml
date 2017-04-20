@@ -5,7 +5,7 @@
         - 'oooq-{release}-deploy-{partner}':
             release: newton
             partner: toad
-        - 'oooq-{release}-current-passed-ci-deploy-{partner}':
+        - 'oooq-{release}-current-passed-ci-deploy-contrail-{partner}':
             release: newton
             partner: toad
         - 'oooq-{release}-deploy-{partner}':
