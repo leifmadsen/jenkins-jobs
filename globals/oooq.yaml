@@ -1,5 +1,5 @@
 - job-template:
-    name: 'oooq-{release}-deploy-{partner}'
+    name: 'rdo-{release}-deploy-{partner}'
     node: '{partner}'
 
     scm:
@@ -110,7 +110,7 @@
       - workspace-cleanup
 
 - job-template:
-    name: 'oooq-{release}-image-downloader'
+    name: 'rdo-{release}-image-downloader'
     node: '{partner}'
 
     triggers:
@@ -127,7 +127,7 @@
           release_version: "{release}"
 
 - job-template:
-    name: 'oooq-{release}-{distro}-osp_deploy-{partner}'
+    name: 'osp-{release}-{distro}-osp_deploy-{partner}'
     node: '{partner}'
 
     scm:
@@ -165,7 +165,7 @@
           publish_target: 'oooq_{release}_{distro}_osp_deploy_{partner}_logs/${{BUILD_ID}}'
 
 - job-template:
-    name: 'oooq-{release}-{distro}-build-{partner}'
+    name: 'osp-{release}-{distro}-build-{partner}'
     node: '{partner}'
 
     scm:
@@ -204,7 +204,7 @@
           publish_target: 'oooq_{release}_{distro}_build_{partner}_logs/${{BUILD_ID}}'
 
 - job-template:
-    name: 'oooq-{release}-deploy-baremetal-{partner}-{hwenv}'
+    name: 'rdo-{release}-deploy-baremetal-{partner}-{hwenv}'
     node: '{partner}-{hwenv}'
 
     scm:
@@ -240,7 +240,7 @@
           publish_target: 'oooq_{release}_deploy_baremetal_{partner}_{hwenv}_logs/${{BUILD_ID}}'
 
 - job-template:
-    name: 'oooq-{release}-{distro}-osp_deploy-baremetal-{partner}-{hwenv}'
+    name: 'osp-{release}-{distro}-osp_deploy-baremetal-{partner}-{hwenv}'
     node: '{partner}-{hwenv}'
 
     scm:

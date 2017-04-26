@@ -1,7 +1,7 @@
 - project:
     name: Upstream Jobs
     project:
-        - upstream
+        - rdo
 
     jobs:
         - '{project}-{release}-image-downloader':
@@ -36,35 +36,35 @@
 - project:
     name: Downstream Jobs
     project:
-        - downstream
+        - osp
 
     jobs:
-        - 'oooq-{release}-{distro}-osp_deploy-{partner}':
+        - '{project}-{release}-{distro}-osp_deploy-{partner}':
             distro: osp8
             release: liberty
             partner: toad
-        - 'oooq-{release}-{distro}-osp_deploy-{partner}':
+        - '{project}-{release}-{distro}-osp_deploy-{partner}':
             distro: osp10
             release: newton
             partner: toad
-        - 'oooq-{release}-{distro}-build-{partner}':
+        - '{project}-{release}-{distro}-build-{partner}':
             release: liberty
             partner: toad
             distro: osp8
-        - 'oooq-{release}-{distro}-build-{partner}':
+        - '{project}-{release}-{distro}-build-{partner}':
             release: newton
             partner: toad
             distro: osp10
-        - 'oooq-{release}-{distro}-osp_deploy-baremetal-{partner}-{hwenv}':
+        - '{project}-{release}-{distro}-osp_deploy-baremetal-{partner}-{hwenv}':
             release: newton
             distro: osp10
             partner: toad
             hwenv: toad
-        - 'oooq-{release}-deploy-baremetal-{partner}-{hwenv}':
+        - '{project}-{release}-deploy-baremetal-{partner}-{hwenv}':
             release: newton
             partner: toad
             hwenv: toad
-        - 'oooq-{release}-deploy-baremetal-{partner}-{hwenv}':
+        - '{project}-{release}-deploy-baremetal-{partner}-{hwenv}':
             release: ocata
             partner: toad
             hwenv: toad
