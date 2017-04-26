@@ -4,31 +4,31 @@
         - upstream
 
     jobs:
-        - 'oooq-{release}-image-downloader':
+        - '{project}-{release}-image-downloader':
             release: mitaka
             partner: master
-        - 'oooq-{release}-image-downloader':
+        - '{project}-{release}-image-downloader':
             release: newton
             partner: master
-        - 'oooq-{release}-image-downloader':
+        - '{project}-{release}-image-downloader':
             release: master
             partner: master
-        - 'oooq-{release}-deploy-{partner}':
+        - '{project}-{release}-deploy-{partner}':
             release: liberty
             partner: toad
-        - 'oooq-{release}-deploy-{partner}':
+        - '{project}-{release}-deploy-{partner}':
             release: mitaka
             partner: toad
-        - 'oooq-{release}-deploy-{partner}':
+        - '{project}-{release}-deploy-{partner}':
             release: newton
             partner: toad
-        - 'oooq-{release}-deploy-{partner}':
+        - '{project}-{release}-deploy-{partner}':
             release: ocata
             partner: toad
-        - 'oooq-{release}-deploy-{partner}':
+        - '{project}-{release}-deploy-{partner}':
             release: master
             partner: toad
-        - 'oooq-validate-{partner}':
+        - '{project}-validate-{partner}':
             partner: toad
         - 'test-browbeat':
             partner: toad
