@@ -1,5 +1,6 @@
-- project:
-    name: TOAD deployments
+- view:
+    name: oooq
+    view-type: list
 
     jobs:
         - 'oooq-{release}-image-downloader':
