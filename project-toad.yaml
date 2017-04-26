@@ -1,6 +1,7 @@
-- view:
-    name: oooq
-    view-type: list
+- project:
+    name: Upstream Jobs
+    project:
+        - upstream
 
     jobs:
         - 'oooq-{release}-image-downloader':
@@ -31,6 +32,13 @@
             partner: toad
         - 'test-browbeat':
             partner: toad
+
+- project:
+    name: Downstream Jobs
+    project:
+        - downstream
+
+    jobs:
         - 'oooq-{release}-{distro}-osp_deploy-{partner}':
             distro: osp8
             release: liberty
