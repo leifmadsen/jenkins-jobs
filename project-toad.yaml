@@ -1,18 +1,9 @@
 - project:
-    name: Upstream Jobs
+    name: RDO Undercloud
     project:
-        - rdo
+        - rdo_undercloud
 
     jobs:
-        - '{project}-{release}-image-downloader':
-            release: mitaka
-            partner: master
-        - '{project}-{release}-image-downloader':
-            release: newton
-            partner: master
-        - '{project}-{release}-image-downloader':
-            release: master
-            partner: master
         - '{project}-{release}-deploy-{partner}':
             release: liberty
             partner: toad
@@ -28,43 +19,25 @@
         - '{project}-{release}-deploy-{partner}':
             release: master
             partner: toad
-        - '{project}-validate-{partner}':
-            partner: toad
-        - 'test-browbeat':
-            partner: toad
 
-- project:
-    name: Downstream Jobs
-    project:
-        - osp
-
-    jobs:
-        - '{project}-{release}-{distro}-osp_deploy-{partner}':
-            distro: osp8
-            release: liberty
-            partner: toad
-        - '{project}-{release}-{distro}-osp_deploy-{partner}':
-            distro: osp10
-            release: newton
-            partner: toad
-        - '{project}-{release}-{distro}-build-{partner}':
-            release: liberty
-            partner: toad
-            distro: osp8
-        - '{project}-{release}-{distro}-build-{partner}':
-            release: newton
-            partner: toad
-            distro: osp10
-        - '{project}-{release}-{distro}-osp_deploy-baremetal-{partner}-{hwenv}':
-            release: newton
-            distro: osp10
-            partner: toad
-            hwenv: toad
-        - '{project}-{release}-deploy-baremetal-{partner}-{hwenv}':
-            release: newton
-            partner: toad
-            hwenv: toad
-        - '{project}-{release}-deploy-baremetal-{partner}-{hwenv}':
-            release: ocata
-            partner: toad
-            hwenv: toad
+#- project:
+#    name: RDO Overcloud Virtual
+#    project:
+#        - rdo_overcloud
+#
+#    jobs:
+#        - '{project}-{release}-deploy-{partner}':
+#            release: liberty
+#            partner: toad
+#        - '{project}-{release}-deploy-{partner}':
+#            release: mitaka
+#            partner: toad
+#        - '{project}-{release}-deploy-{partner}':
+#            release: newton
+#            partner: toad
+#        - '{project}-{release}-deploy-{partner}':
+#            release: ocata
+#            partner: toad
+#        - '{project}-{release}-deploy-{partner}':
+#            release: master
+#            partner: toad
