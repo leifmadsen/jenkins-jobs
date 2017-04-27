@@ -4,19 +4,19 @@
         - rdo_undercloud
 
     jobs:
-        - '{project}-{release}-deploy-{partner}':
+        - 'rdo_undercloud-{release}-deploy-{partner}':
             release: liberty
             partner: toad
-        - '{project}-{release}-deploy-{partner}':
+        - 'rdo_undercloud-{release}-deploy-{partner}':
             release: mitaka
             partner: toad
-        - '{project}-{release}-deploy-{partner}':
+        - 'rdo_undercloud-{release}-deploy-{partner}':
             release: newton
             partner: toad
-        - '{project}-{release}-deploy-{partner}':
+        - 'rdo_undercloud-{release}-deploy-{partner}':
             release: ocata
             partner: toad
-        - '{project}-{release}-deploy-{partner}':
+        - 'rdo_undercloud-{release}-deploy-{partner}':
             release: master
             partner: toad
 
