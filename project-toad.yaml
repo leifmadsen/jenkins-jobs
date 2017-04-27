@@ -20,6 +20,14 @@
             release: master
             partner: toad
 
+- view:
+    name: testing-view
+    view-type: list
+    jobs:
+        - 'rdo_undercloud-{release}-deploy-{partner}':
+            release: liberty
+            partner: toad
+
 #- project:
 #    name: RDO Overcloud Virtual
 #    project:
