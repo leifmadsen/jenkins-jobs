@@ -23,7 +23,14 @@
 - view:
     name: testing-view
     view-type: list
-    regex: (?!rdo.*).*
+    columns:
+        - status
+        - weather
+        - job
+        - last-success
+        - last-failure
+        - last-duration
+    regex: .*_undercloud.*
 
 #- project:
 #    name: RDO Overcloud Virtual
