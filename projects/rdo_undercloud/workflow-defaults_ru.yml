@@ -1,5 +1,5 @@
 - defaults:
-    name: ci-workflow-provision
+    name: ci-workflow-provision-rdo-undercloud
     description: |
         Managed by Jenkins Job Builder. Do not edit via web.
     concurrent: true
@@ -7,10 +7,10 @@
       - clone-oooq
       - clone-collect-logs
     wrappers:
-        - default-ci-workflow-wrappers
+        - default-ci-workflow-wrappers-rdo-undercloud
 
 - wrapper:
-    name: default-ci-workflow-wrappers
+    name: default-ci-workflow-wrappers-rdo-undercloud
     wrappers:
       - copy-to-slave:
           includes:
@@ -22,7 +22,7 @@
       - workspace-cleanup
 
 - publisher:
-    name: default-ci-workflow-publishers
+    name: default-ci-workflow-publishers-rdo-undercloud
     publishers:
         - publish-to-static:
               publish_target: 'rdo_undercloud_{release}_deploy_{partner}_logs/${{BUILD_ID}}'

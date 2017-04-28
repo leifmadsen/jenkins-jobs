@@ -1,7 +1,7 @@
 - job-template:
     name: 'rdo_undercloud-{release}-deploy-{partner}'
     node: '{partner}'
-    defaults: ci-workflow-provision
+    defaults: ci-workflow-provision-rdo-undercloud
 
     builders:
       - cleanup-environment
@@ -21,4 +21,4 @@
       - collect-exit-code
 
     publishers:
-        - default-ci-workflow-publishers
+        - default-ci-workflow-publishers-rdo-undercloud
