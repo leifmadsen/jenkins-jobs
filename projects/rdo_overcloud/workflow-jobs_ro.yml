@@ -1,0 +1,24 @@
+- job-template:
+    name: 'rdo_overcloud-{release}-deploy-{partner}'
+    node: '{partner}'
+    defaults: ci-workflow-provision-rdo-overcloud
+
+    builders:
+      - cleanup-environment
+      - oooq-clear-colors
+      - oooq-install-deps
+      - oooq-export-vars
+      - oooq-deploy:
+          working-dir: "/home/stack/quickstart"
+          requirements: "${{WORKSPACE}}/config/requirements/toad-requirements.txt"
+          config: "./config/general_config/minimal.yml"
+          release: "{release}"
+          playbook: "quickstart-extras.yml"
+          extras: ""
+          skip-tags: "overcloud-validate,teardown-provision"
+      - collect-ara-results
+      - collect-logs
+      - collect-exit-code
+
+    publishers:
+        - default-ci-workflow-publishers-rdo-overcloud
