@@ -23,10 +23,7 @@
 - view:
     name: testing-view
     view-type: list
-    jobs:
-        - 'rdo_undercloud-{release}-deploy-{partner}':
-            release: liberty
-            partner: toad
+    regex: (?!rdo.*).*
 
 #- project:
 #    name: RDO Overcloud Virtual
