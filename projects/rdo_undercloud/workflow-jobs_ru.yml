@@ -15,6 +15,7 @@
           release: "{release}"
           playbook: "quickstart-extras.yml"
           extras: ""
+          skip-tags: "overcloud-validate,teardown-provision,overcloud-deploy"
       - collect-ara-results
       - collect-logs
       - collect-exit-code

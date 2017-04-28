@@ -20,8 +20,74 @@
             release: master
             partner: toad
 
+- project:
+    name: RDO Virtual Overcloud
+    project:
+        - rdo_overcloud
+
+    jobs:
+        - 'rdo_overcloud-{release}-deploy-{partner}':
+            release: liberty
+            partner: toad
+        - 'rdo_overcloud-{release}-deploy-{partner}':
+            release: mitaka
+            partner: toad
+        - 'rdo_overcloud-{release}-deploy-{partner}':
+            release: newton
+            partner: toad
+        - 'rdo_overcloud-{release}-deploy-{partner}':
+            release: ocata
+            partner: toad
+        - 'rdo_overcloud-{release}-deploy-{partner}':
+            release: master
+            partner: toad
+
+#- project:
+#    name: OSP Undercloud
+#    project:
+#        - osp_undercloud
+#
+#    jobs:
+#        - 'osp_undercloud-{release}-deploy-{partner}':
+#            release: liberty
+#            partner: toad
+#        - 'osp_undercloud-{release}-deploy-{partner}':
+#            release: mitaka
+#            partner: toad
+#        - 'osp_undercloud-{release}-deploy-{partner}':
+#            release: newton
+#            partner: toad
+#        - 'osp_undercloud-{release}-deploy-{partner}':
+#            release: ocata
+#            partner: toad
+#        - 'osp_undercloud-{release}-deploy-{partner}':
+#            release: master
+#            partner: toad
+#
+#- project:
+#    name: OSP Virtual Overcloud
+#    project:
+#        - osp_overcloud
+#
+#    jobs:
+#        - 'osp_overcloud-{release}-deploy-{partner}':
+#            release: liberty
+#            partner: toad
+#        - 'osp_overcloud-{release}-deploy-{partner}':
+#            release: mitaka
+#            partner: toad
+#        - 'osp_overcloud-{release}-deploy-{partner}':
+#            release: newton
+#            partner: toad
+#        - 'osp_overcloud-{release}-deploy-{partner}':
+#            release: ocata
+#            partner: toad
+#        - 'osp_overcloud-{release}-deploy-{partner}':
+#            release: master
+#            partner: toad
+
 - view:
-    name: testing-view
+    name: RDO undercloud
     view-type: list
     columns:
         - status
@@ -30,26 +96,40 @@
         - last-success
         - last-failure
         - last-duration
-    regex: .*_undercloud.*
+    regex: .*rdo_undercloud.*
 
-#- project:
-#    name: RDO Overcloud Virtual
-#    project:
-#        - rdo_overcloud
-#
-#    jobs:
-#        - '{project}-{release}-deploy-{partner}':
-#            release: liberty
-#            partner: toad
-#        - '{project}-{release}-deploy-{partner}':
-#            release: mitaka
-#            partner: toad
-#        - '{project}-{release}-deploy-{partner}':
-#            release: newton
-#            partner: toad
-#        - '{project}-{release}-deploy-{partner}':
-#            release: ocata
-#            partner: toad
-#        - '{project}-{release}-deploy-{partner}':
-#            release: master
-#            partner: toad
+- view:
+    name: OSP undercloud
+    view-type: list
+    columns:
+        - status
+        - weather
+        - job
+        - last-success
+        - last-failure
+        - last-duration
+    regex: .*osp_undercloud.*
+
+- view:
+    name: RDO Virtual Overcloud
+    view-type: list
+    columns:
+        - status
+        - weather
+        - job
+        - last-success
+        - last-failure
+        - last-duration
+    regex: .*rdo_overcloud.*
+
+- view:
+    name: OSP Virtual Overcloud
+    view-type: list
+    columns:
+        - status
+        - weather
+        - job
+        - last-success
+        - last-failure
+        - last-duration
+    regex: .*osp_overcloud.*
